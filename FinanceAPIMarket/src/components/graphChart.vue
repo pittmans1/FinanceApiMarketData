@@ -13,9 +13,17 @@ export default {
     }
   },
     mounted() {
-        fetch('https://api.finazon.io/latest/datasets?code=bybit&page=0&page_size=100&apikey=95fcb7469df942cb82430fb321d47c5exn')
+        fetch('https://api.finazon.io/latest/tickers/forex?&apikey=95fcb7469df942cb82430fb321d47c5exn')
         .then((response) => {
            console.log(response)
+        })
+        fetch('https://api.finazon.io/latest/time_series?dataset=forex&ticker=xauusd&&apikey=95fcb7469df942cb82430fb321d47c5exn')
+        .then(res => {
+          console.log(res)
+        })
+        fetch('https://api.finazon.io/latest/datasets?apikey=95fcb7469df942cb82430fb321d47c5exn')
+        .then(res => {
+          console.log(res)
         })
     }
 }
